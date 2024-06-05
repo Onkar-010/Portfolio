@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style data-styles="">
+      ion-icon {
+        visibility: hidden;
+      }
+      .hydrated {
+        visibility: inherit;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
+    <!--Favicon-->
+    <link rel="shortcut icon" href="assets/images/logo.ico" />
+    <!--What does Shortcut icon rel mean-->
+
+    <!---Custom CSS Link--->
+    <link rel="stylesheet" href="assets/css/style1.css" />
+
+    <!---Google Fonts Links--->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!--What does Preconnect rel mean-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="loading-bar"></div>
+    <!--Main Section Start-->
+    <main>
+      <aside class="sidebar" data-sidebar>
+        <!--QUESTIONS: What is aside and also what is Data Side-bar-->
+
+        <!--
+        SideBar (Avatar, Name&Title and ShowMoreBTN )
+        -->
+        <div class="sidebar-info">
+          <figure class="avatar-box">
+            <!--QUESTIONS: What is figure-->
+            <img
+              src="assets/images/avatar-1.png"
+              alt="Onkar Pawar"
+              width="80px"
+            />
+            <!--QUESTIONS: Whay can't we use rem-->
+          </figure>
+
+          <div class="infoContent">
+            <h1 class="name">Onkar Pawar</h1>
+            <p class="title">Web Developer</p>
+          </div>
+
+          <button class="infoContentBtn" data-sidebar-btn>
+            <span>Show Contacts</span>
+            <ion-icon name="chevron-down"></ion-icon>
+          </button>
+        </div>
+
+        <!--
+        SideBar MoreInfo(Email, Phone No and Birthday and Adhress )
+        -->
+        <div class="sidebarInfoMore">
+          <div class="separator"></div>
+          <ul class="contact_list">
+            <li class="contact_item">
+              <div class="icon_box">
+                <ion-icon name="mail-outline"></ion-icon>
+                <!--QUESTIONS: What is the working of Ion-icon tag-->
+              </div>
+              <div class="contact_info">
+                <p class="title">Email</p>
+                <a href="mailto:onkarpawar7924@gmail.com" class="contact_link"
+                  >onkapawar7924@gmail.com</a
+                >
+              </div>
+            </li>
+            <li class="contact_item">
+              <div class="icon_box">
+                <ion-icon
+                  name="phone-portrait-outline"
+                  role="img"
+                  class="md hydrated"
+                  aria-label="phone portrait outline"
+                ></ion-icon>
+              </div>
+              <div class="contact_info">
+                <p class="title">Contact</p>
+                <a href="tel:+919373068472" class="contact_link"
+                  >tel: +91 9373068472</a
+                >
+              </div>
+            </li>
+            <li class="contact_item">
+              <div class="icon_box">
+                <ion-icon
+                  name="calendar-outline"
+                  role="img"
+                  class="md hydrated"
+                  aria-label="calendar outline"
+                ></ion-icon>
+              </div>
+              <div class="contact_info">
+                <p class="title">Birthday</p>
+
+                <time datetime="2004-09-07">September 7, 2004</time>
+              </div>
+            </li>
+            <li class="contact_item">
+              <div class="icon_box">
+                <ion-icon
+                  name="location-outline"
+                  role="img"
+                  class="md hydrated"
+                  aria-label="location outline"
+                ></ion-icon>
+              </div>
+              <div class="contact_info">
+                <p class="title">Email</p>
+                <address>Pune, Maharashtra, India</address>
+              </div>
+            </li>
+          </ul>
+          <div class="separator"></div>
+          <ul class="social_list">
+            <li class="social_item">
+              <a href="#" class="social_link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+            <li class="social_item">
+              <a href="#" class="social_link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+            <li class="social_item">
+              <a href="#" class="social_link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <!--Main Content -->
+      <div class="main_content">
+        <!--Navigation Bar-->
+        <nav class="navbar">
+          <ul class="nav_list">
+            <li class="nav_list_item">
+              <button class="nav_btn active" data-nav-link>About</button>
+            </li>
+            <li class="nav_list_item">
+              <button class="nav_btn" data-nav-link>Resume</button>
+            </li>
+            <li class="nav_list_item">
+              <button class="nav_btn" data-nav-link>Portfolio</button>
+            </li>
+
+            <li class="nav_list_item">
+              <button class="nav_btn" data-nav-link>Contact</button>
+            </li>
+          </ul>
+        </nav>
+
+        <!--About Me Section-->
+        <article class="about active" data-page="about">
+          <!--About Me Section-->
+          <header>
+            <h2 class="h2 about-title">About Me</h2>
+          </header>
+
+          <section class="about-text">
+            <p>
+              Hey there! I'm Onkar Pawar from Pune , Maharashtra. A dedicated
+              web enthusiast who finds sheer delight in the realms of web
+              development and design. With an insatiable curiosity and a knack
+              for creativity, I've immersed myself in these fields, crafting
+              numerous projects that showcase my skills and dedication.
+            </p>
+            <p>
+              My job is to build your website so that it is functional and
+              user-friendly but at the same time attractive. Moreover, I add
+              personal touch to your product and make sure that is eye-catching
+              and easy to use. My aim is to bring across your message and
+              identity in the most creative way.
+            </p>
+          </section>
+
+          <!--Services Section-->
+          <scetion class="services">
+            <h3 class="h3 service-title">What I'm Doing</h3>
+            <ul class="service_list">
+              <li class="service_item">
+                <div class="service_icon_box">
+                  <img
+                    src="assets/images/icon-design.svg"
+                    alt="design-Icons"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content">
+                  <h4 class="h4 service_item_title">Web Design</h4>
+                  <p class="sevice_item_text">
+                    The most modern and high-quality design made at a
+                    professional level.
+                  </p>
+                </div>
+              </li>
+              <li class="service_item">
+                <div class="service_icon_box">
+                  <img
+                    src="assets/images/icon-dev.svg"
+                    alt="design-Icons"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content">
+                  <h4 class="h4 service_item_title">Web development</h4>
+                  <p class="sevice_item_text">
+                    High-quality development of sites at the professional level.
+                  </p>
+                </div>
+              </li>
+              <li class="service_item">
+                <div class="service_icon_box">
+                  <img
+                    src="assets/images/icon-app.svg"
+                    alt="design-Icons"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content">
+                  <h4 class="h4 service_item_title">Mobile Apps</h4>
+                  <p class="sevice_item_text">
+                    Professional development of applications for iOS and
+                    Android.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </scetion>
+        </article>
+
+        <article class="resume" data-page="resume">
+          <header>
+            <h2 class="h2 about-title">Resume</h2>
+          </header>
+
+          <section class="timeline">
+            <div class="service-title title-waper">
+              <div class="icon_box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+              <h3 class="h3">Education</h3>
+            </div>
+            <ol class="timeline-list">
+              <li class="timeline-list-item">
+                <h4 class="h4 timeline-list-item-title">Secondary Education</h4>
+                <span>2018-2019</span>
+                <p>
+                  Completed my Secondary Eduction from St Joseph's English
+                  Medium School & Jr College ,Khalad
+                </p>
+              </li>
+              <li class="timeline-list-item">
+                <h4 class="h4 timeline-list-item-title">
+                  Higher Secondary Education
+                </h4>
+                <span>2020-2021</span>
+                <p>
+                  Completed my Higher Secondary Eduction from St Joseph's
+                  English Medium School & Jr College ,Khalad from Science Stream
+                  (PCM)
+                </p>
+              </li>
+              <li class="timeline-list-item">
+                <h4 class="h4 timeline-list-item-title">
+                  B-Tech in Computer Science and Engineering
+                </h4>
+                <span>2022-2026</span>
+                <p>
+                  Persuing my B-tech in Computer Scienceand Engineering from Dr
+                  Babasaheb Ambedkar Technological University , Loner
+                </p>
+              </li>
+            </ol>
+          </section>
+
+          <section class="Experience timeline">
+            <div class="service-title title-waper">
+              <div class="icon_box">
+                <ion-icon
+                  color="orange"
+                  class="Experience_icon"
+                  name="bonfire-outline"
+                ></ion-icon>
+              </div>
+              <h3 class="h3">Experience</h3>
+            </div>
+            <ol class="timeline-list">
+              <li class="timeline-list-item">
+                <h4 class="h4 timeline-list-item-title">Fresher</h4>
+                <span>Open to Work</span>
+                <p>
+                  Highly motivated web development fresher eager to learn and
+                  build innovative & user-friendly websites. <br />Strong
+                  foundation in HTML, CSS, and JavaScript. Actively learning
+                  frameworks and best practices.Passionate about creating
+                  beautiful and functional websites. See my projects to explore
+                  my capabilities!
+                </p>
+              </li>
+            </ol>
+          </section>
+
+          <section class="skills">
+            <h3 class="h3 skill-title service-title">My Skills</h3>
+            <ul class="skill-list service_item">
+              <li class="skill-item">
+                <div class="title-waper">
+                  <h5 class="h5">HTML5 and CSS3</h5>
+                  <data value="80">70%</data>
+                </div>
+                <div class="skill-progess-bg">
+                  <div class="skill-progress-fill" style="width: 70%"></div>
+                </div>
+              </li>
+              <li class="skill-item">
+                <div class="title-waper">
+                  <h5 class="h5">JavaScript</h5>
+                  <data value="50">50%</data>
+                </div>
+                <div class="skill-progess-bg">
+                  <div class="skill-progress-fill" style="width: 50%"></div>
+                </div>
+              </li>
+              <li class="skill-item">
+                <div class="title-waper">
+                  <h5 class="h5">React.js</h5>
+                  <data value="0">0%</data>
+                </div>
+                <div class="skill-progess-bg">
+                  <div class="skill-progress-fill" style="width: 0%"></div>
+                </div>
+              </li>
+              <li class="skill-item">
+                <div class="title-waper">
+                  <h5 class="h5">Web design</h5>
+                  <data value="80">80%</data>
+                </div>
+                <div class="skill-progess-bg">
+                  <div class="skill-progress-fill" style="width: 80%"></div>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </article>
+
+        <article class="portfolio" data-page="portfolio">
+          <!--About Me Section-->
+          <header>
+            <h2 class="h2 about-title">About Me</h2>
+          </header>
+
+          <section class="about-text">
+            <p>
+              Hey there! I'm Onkar Pawar from Pune , Maharashtra. A dedicated
+              web enthusiast who finds sheer delight in the realms of web
+              development and design. With an insatiable curiosity and a knack
+              for creativity, I've immersed myself in these fields, crafting
+              numerous projects that showcase my skills and dedication.
+            </p>
+            <p>
+              My job is to build your website so that it is functional and
+              user-friendly but at the same time attractive. Moreover, I add
+              personal touch to your product and make sure that is eye-catching
+              and easy to use. My aim is to bring across your message and
+              identity in the most creative way.
+            </p>
+          </section>
+
+          <!--Services Section-->
+          <scetion class="services">
+            <h3 class="h3 service-title">What I'm Doing</h3>
+            <ul class="service_list">
+              <li class="service_item">
+                <div class="service_icon_box">
+                  <img
+                    src="assets/images/icon-design.svg"
+                    alt="design-Icons"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content">
+                  <h4 class="h4 service_item_title">Web Design</h4>
+                  <p class="sevice_item_text">
+                    The most modern and high-quality design made at a
+                    professional level.
+                  </p>
+                </div>
+              </li>
+              <li class="service_item">
+                <div class="service_icon_box">
+                  <img
+                    src="assets/images/icon-dev.svg"
+                    alt="design-Icons"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content">
+                  <h4 class="h4 service_item_title">Web development</h4>
+                  <p class="sevice_item_text">
+                    High-quality development of sites at the professional level.
+                  </p>
+                </div>
+              </li>
+              <li class="service_item">
+                <div class="service_icon_box">
+                  <img
+                    src="assets/images/icon-app.svg"
+                    alt="design-Icons"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content">
+                  <h4 class="h4 service_item_title">Mobile Apps</h4>
+                  <p class="sevice_item_text">
+                    Professional development of applications for iOS and
+                    Android.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </scetion>
+        </article>
+
+        <article class="contact" data-page="contact">
+          <header><h2 class="h2 article-title about-title">Contact</h2></header>
+          <section class="mapbox" data-mapbox>
+            <figure>
+              <iframe
+                src="https://www.google.com/maps/place/Saswad,+Maharashtra+412301/@18.3500316,74.0124294,14z/data=!3m1!4b1!4m6!3m5!1s0x3bc2ef88682aff03:0x8f1183045ce2366!8m2!3d18.3463128!4d74.0301826!16zL20vMGY2Nnpt?entry=ttu
+                "
+                frameborder="0"
+                width="400"
+                height="300"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </figure>
+          </section>
+
+          <section class="contact-form">
+            <h3 class="h3 form-title">Contact form</h3>
+            <form action="#" class="form" data-form>
+              <div class="input-wraper">
+                <input
+                  type="text"
+                  name="fullname"
+                  class="form-input"
+                  placeholder="Full Name"
+                  required
+                  data-form-input
+                />
+
+                <input
+                  type="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="Email Adhress"
+                  required
+                  data-form-input
+                />
+              </div>
+              <textarea
+                name="message"
+                class="form-input"
+                placeholder="Yout message"
+                required
+                data-form-input
+              ></textarea>
+
+              <button class="form-btn" type="submit" disabled>
+                <ion-icon name="paper-plane"></ion-icon>
+                <span>Send message</span>
+              </button>
+            </form>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <!--Main Section Ends -->
+
+    <!--Script Linking-->
+    <script src="assets/js/script.js"></script>
+    <!--ion-Icon Linking-->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
