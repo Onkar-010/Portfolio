@@ -1,0 +1,833 @@
+/*-----------------------------------*\
+  #style.css
+\*-----------------------------------*/
+
+/**
+ * copyright 2022 @codewithsadee
+ */
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+:root {
+  /**
+     * colors
+     */
+
+  /* gradient */
+
+  --bg-gradient-onyx: linear-gradient(
+    to bottom right,
+    hsl(240, 1%, 25%) 3%,
+    hsl(0, 0%, 19%) 97%
+  );
+  --bg-gradient-jet: linear-gradient(
+      to bottom right,
+      hsla(240, 1%, 18%, 0.251) 0%,
+      hsla(240, 2%, 11%, 0) 100%
+    ),
+    hsl(240, 2%, 13%);
+  --bg-gradient-yellow-1: linear-gradient(
+    to bottom right,
+    hsl(45, 100%, 71%) 0%,
+    hsla(36, 100%, 69%, 0) 50%
+  );
+  --bg-gradient-yellow-2: linear-gradient(
+      135deg,
+      hsla(45, 100%, 71%, 0.251) 0%,
+      hsla(35, 100%, 68%, 0) 59.86%
+    ),
+    hsl(240, 2%, 13%);
+  --border-gradient-onyx: linear-gradient(
+    to bottom right,
+    hsl(0, 0%, 25%) 0%,
+    hsla(0, 0%, 25%, 0) 50%
+  );
+  --text-gradient-yellow: linear-gradient(
+    to right,
+    hsl(45, 100%, 72%),
+    hsl(35, 100%, 68%)
+  );
+
+  /* solid */
+
+  --jet: hsl(0, 0%, 22%); /**what is hsl and hsla coluring system*/
+  --onyx: hsl(240, 1%, 17%);
+  --eerie-black-1: hsl(240, 2%, 13%);
+  --eerie-black-2: hsl(240, 2%, 12%);
+  --smoky-black: hsl(0, 0%, 7%);
+  --white-1: hsl(0, 0%, 100%);
+  --white-2: hsl(0, 0%, 98%);
+  --orange-yellow-crayola: hsl(45, 100%, 72%);
+  --vegas-gold: hsl(45, 54%, 58%);
+  --light-gray: hsl(0, 0%, 84%);
+  --light-gray-70: hsla(0, 0%, 84%, 0.7);
+  --bittersweet-shimmer: hsl(0, 43%, 51%);
+
+  /**
+     * typography
+     */
+
+  /* font-family */
+  --ff-poppins: "Poppins", sans-serif;
+
+  /* font-size */
+  --fs-1: 24px;
+  --fs-2: 18px;
+  --fs-3: 17px;
+  --fs-4: 16px;
+  --fs-5: 15px;
+  --fs-6: 14px;
+  --fs-7: 13px;
+  --fs-8: 11px;
+
+  /* font-weight */
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+
+  /**
+     * shadow
+     */
+
+  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
+  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
+  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
+  --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
+  --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
+
+  /**
+     * transition
+     */
+
+  --transition-1: 0.25s ease;
+  --transition-3: 1.25s ease;
+  --transition-2: 0.5s ease-in-out;
+}
+
+/*-----------------------------------*\
+    #RESET
+  \*-----------------------------------*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img,
+ion-icon,
+a,
+button,
+time,
+span {
+  display: block;
+}
+
+button {
+  font: inherit;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  background: none;
+  font: inherit;
+}
+
+::selection {
+  background: var(--orange-yellow-crayola);
+  color: var(--smoky-black);
+}
+
+:focus {
+  outline-color: var(--orange-yellow-crayola);
+}
+
+html {
+  font-family: var(--ff-poppins);
+}
+
+body {
+  background: var(--smoky-black);
+}
+
+/***********************************************
+Reused Styles
+****************************************************/
+
+/**Sidebar Section**/
+.sidebar,
+article {
+  background: var(--eerie-black-2);
+  border: 1px solid var(--bg-gradient-jet);
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-1); /*Working of box shadow */
+  z-index: -1; /*Working of z_index*/
+}
+
+.icon_box {
+  position: relative;
+  background: var(--border-gradient-onyx);
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: var(--orange-yellow-crayola);
+  box-shadow: var(--shadow-1);
+  z-index: 1;
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background: var(--jet);
+  margin: 16px 0;
+}
+
+.icon_box::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--eerie-black-1);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.icon_box ion-icon {
+  --ionicon-stroke-width: 35px;
+}
+/*-----------------------------------*\  
+   Article Section
+\*-----------------------------------*/
+article {
+  display: none;
+}
+
+article.active {
+  display: block;
+  animation: fade 0.5ms ease backwards;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+h2,
+h3,
+h4,
+h5 {
+  color: var(--white-1);
+  text-transform: capitalize;
+}
+
+h2 {
+  font-size: var(--fs-1);
+}
+h3 {
+  font-size: var(--fs-2);
+}
+h4 {
+  font-size: var(--fs-4);
+}
+h5 {
+  font-size: var(--fs-5);
+  font-weight: var(--fw-500);
+}
+
+.about-title {
+  position: relative;
+  padding: 7xp;
+}
+
+.about-title::after
+/*Yellow line Below About Me*/ {
+  position: absolute;
+  content: "";
+  width: 32px;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background: var(--text-gradient-yellow);
+  border-radius: 3px;
+}
+
+/***********************************************
+Main-Section Starts
+****************************************************/
+main {
+  margin: 15px 12px; /*(up&down left&right)*/
+  margin-bottom: 72px;
+  min-width: 259px;
+}
+
+/************************SideBar************************/
+.sidebar {
+  margin-bottom: 15px;
+  padding: 13px; /*To make the infoContentBtn in the frame */
+  max-height: 112px;
+  transition: var(--transition-2); /* Smooth opacity transition */
+
+  /*QUESTIONS: when no overfolw is given the background shrink 
+  to avtar-box and name ,whereas other component 
+  overfolws the box or goes out of box*/
+  overflow: hidden; /*What does it Do what can be it's different values? */
+}
+
+.sidebar.active {
+  max-height: 405px; /* Removes the max-height restriction when active */
+  overflow: auto; /* Shows overflow content with scrollbar (optional) */
+}
+
+.sidebar-info {
+  position: relative; /*QUESTIONS: Woriking of Postion and what are it diffrent value do*/
+  display: flex; /*/QUESTIONS: What is display property and what its different values do and it's relation to position*/
+
+  /* QUESTIONS: Difference between align-items , justift-item, justift-content,  justift-text, align-text */
+  /* QUESTIONS: What are diffrent combination Align , justify  */
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+}
+
+/*Box-sidebar-info*/
+.avatar-box {
+  background: var(--bg-gradient-onyx);
+  border-radius: 20px;
+}
+
+.infoContent .name {
+  color: var(--white-2);
+  font-size: var(--fs-3);
+  font-weight: var(--fw-500);
+  letter-spacing: -0.25px; /*QUESTIONS: How does the letter spaccing Work*/
+  margin-bottom: 10px;
+}
+
+.infoContent .title {
+  color: var(--white-2);
+  font-size: var(--fs-8);
+  background: var(--onyx);
+  font-weight: var(--fw-300);
+  width: max-content; /*QUESTIONS: How Does this Line Works*/
+  padding: 3px 12px;
+  border-radius: 12px;
+}
+
+/*QUESTIONS: Understand the Working of this below Code */
+.infoContentBtn {
+  position: absolute;
+  top: -15px;
+  right: -12px;
+  border-radius: 0 15px;
+  font-size: 13px;
+  color: var(--orange-yellow-crayola);
+  background: var(--border-gradient-onyx);
+  padding: 10px;
+  box-shadow: var(--shadow-2);
+  transition: var(--transition-1);
+  z-index: -0.8;
+}
+
+.infoContentBtn::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: var(--bg-gradient-jet);
+  transition: var(--transition-1);
+  z-index: -1;
+}
+
+/*QUESTIONS: What is the difference between Background and Background-color*/
+.infoContentBtn:hover,
+.infoContentBtn:focus {
+  background: var(--bg-gradient-yellow-2);
+}
+
+.infoContentBtn:hover::before,
+.infoContentBtn:focus::before {
+  background: var(--bg-gradient-yellow-1);
+}
+
+.infoContentBtn span {
+  display: none;
+}
+
+/************************************Sidebar-info_more**********************************/
+
+.sidebarInfoMore {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.sidebar.active .sidebarInfoMore {
+  opacity: 1;
+  visibility: visible;
+  transition: var(--transition-3);
+}
+
+/*Question Working of Visibilty*/
+/*What does this Line Mean 
+why there is No Space in .sidebar and active but in .sidebar-info_more*/
+
+.contact_list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.contact_item {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact_info {
+  max-width: calc(100%-46px);
+  width: calc(100%-46px);
+}
+
+.title {
+  color: var(--light-gray-70);
+  font-size: var(--fs-8);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.contact_info :is(.contact_link, time, address) {
+  color: var(--white-1);
+  font-size: var(--fs-7);
+  font-style: normal;
+}
+
+.social_list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  padding: 7px;
+}
+
+.social_item .social_link {
+  color: var(--light-gray-70);
+  font-size: 18px;
+}
+
+.social_item .social_link::hover {
+  color: var(--light-gray);
+}
+/***********************************************
+Main-Section Ends
+****************************************************/
+
+/***********************************************
+Navigation Bar Start 
+****************************************************/
+
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: hsla(240, 1%, 17%, 0.75);
+  width: 100%;
+
+  /*New Proerty*/
+  backdrop-filter: blur(10px);
+
+  border-radius: 12px 12px 0 0;
+  border: 1px solid var(--jet);
+  box-shadow: var(--shadow-1);
+  z-index: 5;
+}
+
+.nav_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.nav_btn {
+  color: var(--light-gray);
+  font-size: var(--fs-8);
+  padding: 20px 7px;
+  transition: color var(--transition-1);
+}
+
+.nav_btn:hover,
+.nav_btn:focus {
+  color: var(--light-gray-70);
+}
+
+.nav_btn.active {
+  color: var(--orange-yellow-crayola);
+}
+
+/***********************************************
+Navigation Bar  Ends 
+****************************************************/
+
+/***********************************************
+About Me & Services Site 
+****************************************************/
+
+/**************About Me ***********************/
+
+.about .about-title {
+  margin-bottom: 15px;
+}
+
+.about-text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+}
+
+/**************Services***********************/
+
+.service {
+  margin-bottom: 35px;
+}
+
+.service-title {
+  margin-bottom: 20px;
+}
+
+/**Designing the List Item (DESIGN ,WEB DEV AND MOBILEAPP**/
+.service_list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.service_item {
+  position: relative;
+  background: var(--border-gradient-onyx);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-2);
+  z-index: 1;
+}
+/**What is the Pourpose of this */
+.service_item::before {
+  content: "";
+  position: absolute;
+
+  /**Inset New Property**/
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.service_icon_box {
+  margin-bottom: 10px;
+}
+
+.service_icon_box img {
+  margin: auto; /*Centering the Icon*/
+}
+
+.service-content {
+  text-align: center;
+}
+
+.service_item_title {
+  margin-bottom: 7px;
+}
+
+.sevice_item_text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+}
+
+/**************Resume***********************/
+article .about-title {
+  margin-bottom: 30px;
+}
+
+.timeline {
+  margin-bottom: 30px;
+}
+
+.timeline-list {
+  margin-left: 45px;
+  font-size: var(--fs-6);
+  list-style: circle;
+}
+
+.timeline-list-item {
+  position: relative; /*Making the List-item Parent for the timeline Line*/
+}
+
+.timeline-list-item:not(:last-child)::before {
+  /*Getting the timline Line */
+  content: "";
+  position: absolute; /*Setting As child of the List-item*/
+  top: -25px;
+  left: -30px;
+  width: 1px;
+  height: calc(100% + 50px);
+  background: var(--jet);
+}
+
+.timeline-list-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.timeline-list-item::after {
+  content: "";
+  position: absolute; /*Setting As child of the List-item*/
+  top: 5px;
+  left: -33px;
+  width: 6px;
+  height: 6px;
+  background: var(--text-gradient-yellow);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--jet);
+}
+
+/*Conneted List Effect start*/
+timeline-list-item {
+  font-size: var(--fs-6);
+  line-height: 1.3;
+  margin-bottom: 7px;
+}
+
+.timeline p {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  line-height: 1.6;
+}
+
+.timeline span {
+  color: var(--vegas-gold);
+  font-weight: var(--fw-400);
+  line-height: 1.6;
+  margin: 0 0;
+}
+.timeline .title-waper {
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/*Experience Icon */
+.Experience_icon {
+  font-size: 18px;
+}
+
+/************************My SKills ****************************** */
+.skill-title {
+  margin-bottom: 15px;
+}
+
+.skill-list {
+  padding: 20px;
+}
+
+.skill-item:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.skills .title-waper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.skills .title-waper data {
+  font-size: var(--fs-7);
+  font-weight: var(--fw-300);
+  color: var(--light-gray);
+}
+
+.skill-progess-bg {
+  background: var(--jet);
+  height: 9px;
+  border-radius: 10px;
+}
+
+.skill-progress-fill {
+  background: var(--text-gradient-yellow);
+  height: 100%;
+  border-radius: inherit;
+}
+
+/************************Contact ****************************** */
+
+.mapbox {
+  position: relative;
+  height: 250px;
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  border: 1px solid var(--jet);
+  overflow: hidden;
+}
+
+.mapbox figure {
+  height: 100%;
+}
+
+.mapbox iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: grayscale(1) invert(1);
+}
+
+.contact-form {
+  margin-bottom: 15px;
+}
+
+.form-title {
+  margin-bottom: 10px;
+}
+
+.input-wraper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  margin-bottom: 25px;
+}
+
+.form-input {
+  color: var(--white-1);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-600);
+  padding: 13px 20px;
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  outline: none;
+}
+
+form-input::placeholder {
+  font-weight: var(--fw-500);
+}
+
+.form-input:focus {
+  border-color: var(--orange-yellow-crayola);
+}
+
+textarea.form-input {
+  min-height: 100px;
+  height: 120px;
+  max-height: 200px;
+  resize: vertical;
+  margin-bottom: 25px;
+}
+
+.form-btn {
+  position: relative;
+  width: 100%;
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border-radius: 14px;
+  font-size: var(--fs-6);
+  text-transform: capitalize;
+  box-shadow: var(--shadow-3);
+  z-index: 1;
+  transition: var(--transition-1);
+}
+
+.form-btn::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+button {
+  font: inherit;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+/*****Loading Animation*****/
+.loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--smoky-black);
+  transition: opacity 0.75s, visibility 0.75s;
+  z-index: 999;
+}
+
+.loading-bar .hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading-bar::after {
+  content: "";
+  width: 70px;
+  height: 70px;
+  border: 10px solid var(--eerie-black-2);
+  border-top-color: var(--orange-yellow-crayola);
+  border-radius: 50%;
+  animation: loading 1s ease infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/****/
